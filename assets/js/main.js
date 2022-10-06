@@ -3,8 +3,10 @@
 **************************/
 
 // 1 - ask the user the number of kilometres he/she wants to travel
+const userKm = Number(prompt("how many kilometres do you want to cover?"));
 
 // 2 - ask the user age
+const userAge = Number(prompt("How old are you?"));
 
 // 3 - calculate the total price of the trip:
 // ticket price is defined according to km (0.21 € per km)
