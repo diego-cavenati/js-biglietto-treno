@@ -13,7 +13,7 @@ const userAge = Number(prompt("How old are you?"));
 const priceKm = 0.21;
 
 // ticket price without discounts
-const ticketFullPrice = userKm * priceKm;
+const ticketFullPrice = priceKm * userKm;
 
 // 20% discount for minors
 const discountMinors = (ticketFullPrice / 100) * 20;
@@ -21,4 +21,11 @@ const discountMinors = (ticketFullPrice / 100) * 20;
 // 40% discount for the over 65s
 const discountOver = (ticketFullPrice / 100) * 40;
 
-// The output of the final price must have a maximum of two decimal places, to indicate cents on the price
+// The output final price with a maximum of two decimal
+if (userAge <= 18) {
+    console.log((ticketFullPrice - discountMinors).toFixed(2));
+} else if (userAge > 65) {
+    console.log((ticketFullPrice - discountOver).toFixed(2));
+} else {
+    console.log(ticketFullPrice.toFixed(2));
+}
