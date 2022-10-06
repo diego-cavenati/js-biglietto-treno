@@ -23,9 +23,21 @@ const discountOver = (ticketFullPrice / 100) * 40;
 
 // The output final price with a maximum of two decimal
 if (userAge <= 18) {
-    console.log((ticketFullPrice - discountMinors).toFixed(2));
-} else if (userAge > 65) {
-    console.log((ticketFullPrice - discountOver).toFixed(2));
+
+    document.getElementById(`ticket_price`).innerHTML = ((ticketFullPrice - discountMinors).toFixed(2) + " €");
+
+    document.getElementById(`discount_message`).innerHTML = "You are a minor and are entitled to 20% discount";
+
+} else if (userAge >= 65) {
+
+    document.getElementById(`ticket_price`).innerHTML = ((ticketFullPrice - discountOver).toFixed(2) + " €");
+
+    document.getElementById(`discount_message`).innerHTML = "You are over 65s and are entitled to 40% discount";
+
 } else {
-    console.log(ticketFullPrice.toFixed(2));
+
+    document.getElementById(`ticket_price`).innerHTML = (ticketFullPrice.toFixed(2) + " €");
+
+    document.getElementById(`discount_message`).innerHTML = "Based on your age you are not entitled to discounts";
+
 }
